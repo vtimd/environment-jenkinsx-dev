@@ -21,6 +21,15 @@ git clone https://github.com/<org>/environment-<cluster name>-dev && cd environm
 ```
  
 > It's important that you cd into your newly checked out git repo, otherwise `jx boot` will use the upstream Jenkins X boot
+configuration.
+
+Now, in the checkout, run:
+
+```
+git clone https://github.com/<org>/environment-<cluster name>-dev && cd environment-<cluster name>-dev
+```
+ 
+> It's important that you cd into your newly checked out git repo, otherwise `jx boot` will use the upstream Jenkins X boot
 configuration which differs from this one.
 
 Now, in the checkout, run:
