@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:jenkinsx/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: tim.davis.instinct@gmail.com
+  token: vault:jenkinsx/pipelineUser:token
+  username: vtimd
+prow:
+  hmacToken: vault:jenkinsx/prow:hmacToken

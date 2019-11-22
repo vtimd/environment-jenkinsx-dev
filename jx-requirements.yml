@@ -1,22 +1,53 @@
 autoUpdate:
   enabled: false
   schedule: ""
+bootConfigURL: https://github.com/cloudbees/cloudbees-jenkins-x-boot-config.git
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: true
-  project: ""
   azure: {}
+  clusterName: jenkinsx
+  environmentGitOwner: vtimd
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: vmwarecloudadvocacy
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: us-central1-c
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: 34.69.227.94.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 34.69.227.94.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
@@ -24,16 +55,21 @@ ingress:
 kaniko: true
 secretStorage: vault
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: true
-    url: ""
+    url: gs://jenkinsx-logs-f24f7052-490e-49b1-b03c-3b7d0e7bc35e
   reports:
     enabled: true
-    url: ""
+    url: gs://jenkinsx-reports-b0fea936-dba6-47aa-aa9f-badc1e448291
   repository:
     enabled: true
-    url: ""
+    url: gs://jenkinsx-repository-f7b4357e-4f8c-47b1-99e1-848fe903076
+vault: {}
+velero: {}
 versionStream:
-  ref: b335faf15fddb5863a7b5360b03f48b72fe69340 
+  ref: b335faf15fddb5863a7b5360b03f48b72fe69340
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: prow
