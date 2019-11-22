@@ -11,9 +11,9 @@ cluster:
   zone: ""
 gitops: true
 environments:
-- key: dev
-- key: staging
-- key: production
+  - key: dev
+  - key: staging
+  - key: production
 ingress:
   domain: ""
   externalDNS: false
@@ -34,6 +34,6 @@ storage:
     enabled: true
     url: ""
 versionStream:
-  ref: b335faf15fddb5863a7b5360b03f48b72fe69340 
+  ref: 2.0.1005-cjxd5-SNAPSHOT-1
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: prow
